@@ -18,7 +18,7 @@ function gulpFontgen(options) {
   // Creating a stream through which each file will pass
   var stream = through.obj(function(file, enc, callback) {
 
-    options.source = path.join(file.cwd, file.relative);
+    options.source = file.path;
     fontface(options);
 
     this.push(file);
