@@ -25,7 +25,7 @@ gulp.src("./src/*.ext")
 
 ## API
 
-### gulp-fontgen(options)
+### gulpFontgen(options)
 
 #### options.dest
 Type: `String` (Required)
