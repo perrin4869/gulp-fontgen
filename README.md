@@ -15,17 +15,17 @@ npm install --save-dev gulp-fontgen
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var gulp-fontgen = require("gulp-fontgen");
+var gulpFontgen = require("gulp-fontgen");
 
 gulp.src("./src/*.ext")
-    .pipe(gulp-fontgen({
+    .pipe(gulpFontgen({
         dest: "./dest/"
     }))
 ```
 
 ## API
 
-### gulp-fontgen(options)
+### gulpFontgen(options)
 
 #### options.dest
 Type: `String` (Required)
