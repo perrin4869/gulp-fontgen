@@ -1,7 +1,7 @@
 {
   "name": "gulp-fontgen",
   "description": "Generator of browser fonts and css from ttf or otf files",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "homepage": "https://github.com/agentk/gulp-fontgen",
   "author": {
     "name": "Karl Bowden",
