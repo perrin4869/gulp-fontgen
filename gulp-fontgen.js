@@ -13,9 +13,9 @@
  */
 
 // through2 is a thin wrapper around node transform streams
-import * as through from 'through2';
-import PluginError from 'gulp-util';
-import * as fontface from 'fontfacegen';
+import through from 'through2';
+import { PluginError } from 'gulp-util';
+import fontface from 'fontfacegen';
 
 // Consts
 const PLUGIN_NAME = 'gulp-fontgen';
