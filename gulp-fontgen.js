@@ -21,7 +21,7 @@ import fontface from 'fontfacegen';
 const PLUGIN_NAME = 'gulp-fontgen';
 
 // Plugin level function(dealing with files)
-export default function (options) {
+export default options => {
   if (!options.dest) {
     throw new PluginError(PLUGIN_NAME, 'options.dest is missing');
   }
@@ -34,4 +34,4 @@ export default function (options) {
     this.push(file);
     return callback();
   });
-}
+};
