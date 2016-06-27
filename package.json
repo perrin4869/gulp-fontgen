@@ -1,7 +1,7 @@
 {
   "name": "gulp-fontgen",
   "description": "Generator of browser fonts and css from ttf or otf files",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/agentk/gulp-fontgen",
   "author": {
     "name": "Karl Bowden",
@@ -26,9 +26,13 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "test": "node test.js"
+    "lint": "eslint 'gulp-fontgen.js'",
+    "pretest": "npm run lint",
+    "build": "babel gulp-fontgen.js --out-file index.js",
+    "prepublish": "npm run build",
+    "test": "babel-node test.js"
   },
-  "main": "gulp-fontgen.js",
+  "main": "index.js",
   "keywords": [
     "gulpplugin",
     "font-face",
@@ -47,9 +51,14 @@
   "dependencies": {
     "fontfacegen": "^0.2.1",
     "gulp-util": "^3.0.7",
-    "through2": "^2.0.0"
+    "through2": "^2.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "gulp": "^3.9.1"
   }
 }
