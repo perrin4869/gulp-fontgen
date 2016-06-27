@@ -4,38 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = function (options) {
-  var _this = this;
-
-  if (!options.dest) {
-    throw new _gulpUtil2.default(PLUGIN_NAME, 'options.dest is missing');
-  }
-  // Creating a stream through which each file will pass
-
-  return through.obj(function (file, enc, callback) {
-    // options.source = file.path;
-    fontface(options);
-
-    _this.push(file);
-    return callback();
-  });
-};
-
 var _through = require('through2');
 
-var through = _interopRequireWildcard(_through);
+var _through2 = _interopRequireDefault(_through);
 
 var _gulpUtil = require('gulp-util');
 
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
-
 var _fontfacegen = require('fontfacegen');
 
-var fontface = _interopRequireWildcard(_fontfacegen);
+var _fontfacegen2 = _interopRequireDefault(_fontfacegen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // Consts
 var PLUGIN_NAME = 'gulp-fontgen';
@@ -56,3 +35,18 @@ var PLUGIN_NAME = 'gulp-fontgen';
  */
 
 // through2 is a thin wrapper around node transform streams
+
+exports.default = function (options) {
+  if (!options.dest) {
+    throw new _gulpUtil.PluginError(PLUGIN_NAME, 'options.dest is missing');
+  }
+  // Creating a stream through which each file will pass
+
+  return _through2.default.obj(function (file, enc, callback) {
+    // options.source = file.path;
+    (0, _fontfacegen2.default)(options);
+
+    undefined.push(file);
+    return callback();
+  });
+};
