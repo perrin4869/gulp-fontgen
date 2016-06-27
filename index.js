@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.gulpFontgen = gulpFontgen;
+exports.fontgen = fontgen;
 
 var _through = require('through2');
 
@@ -40,7 +40,7 @@ var PLUGIN_NAME = 'gulp-fontgen';
  */
 
 // through2 is a thin wrapper around node transform streams
-function gulpFontgen(options) {
+function fontgen(options) {
   var _this = this;
 
   if (!options.dest) {
