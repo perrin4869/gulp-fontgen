@@ -3,7 +3,23 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fontgen = fontgen;
+
+exports.default = function (options) {
+  var _this = this;
+
+  if (!options.dest) {
+    throw new _gulpUtil2.default(PLUGIN_NAME, 'options.dest is missing');
+  }
+  // Creating a stream through which each file will pass
+
+  return through.obj(function (file, enc, callback) {
+    // options.source = file.path;
+    fontface(options);
+
+    _this.push(file);
+    return callback();
+  });
+};
 
 var _through = require('through2');
 
@@ -40,19 +56,3 @@ var PLUGIN_NAME = 'gulp-fontgen';
  */
 
 // through2 is a thin wrapper around node transform streams
-function fontgen(options) {
-  var _this = this;
-
-  if (!options.dest) {
-    throw new _gulpUtil2.default(PLUGIN_NAME, 'options.dest is missing');
-  }
-  // Creating a stream through which each file will pass
-
-  return through.obj(function (file, enc, callback) {
-    // options.source = file.path;
-    fontface(options);
-
-    _this.push(file);
-    return callback();
-  });
-}
