@@ -1,3 +1,3 @@
 'use strict';
 
-var fontgen = require('./lib/gulp-fontgen.js');
+module.exports = require('./lib/gulp-fontgen.js').default;

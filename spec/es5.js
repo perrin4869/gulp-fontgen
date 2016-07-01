@@ -1,3 +1,7 @@
 'use strict';
 
-var fongen = require('../index.js');
+var fontgen = require('../index.js');
+
+if (typeof fontgen !== 'function') {
+  throw "Not a function"
+}
