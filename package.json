@@ -30,7 +30,7 @@
     "pretest": "npm run lint",
     "build": "babel src --out-dir lib",
     "prepublish": "npm run build",
-    "test": "babel-node test.js"
+    "test": "babel-node spec/es6.js && node spec/es5.js"
   },
   "main": "index.js",
   "keywords": [
