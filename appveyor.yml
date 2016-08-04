@@ -1,8 +1,9 @@
 branches:
-  - master
-  - develop
-  - /release\/*/
-  - /fix\/*/
+  only:
+    - master
+    - develop
+    - /release\/*/
+    - /fix\/*/
 # Test against this version of Node.js
 environment:
   matrix:
