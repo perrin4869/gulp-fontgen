@@ -18,12 +18,15 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - cinst fontforge
   # install modules
-  - npm install
+  # - npm install
 
 # Post-install test scripts.
 test_script:
   # run tests
-  - npm test
+  # - node --version
+  # - npm --version
+  - fontforge --version
+  # - npm run test
 
 # Don't actually build.
 build: off
