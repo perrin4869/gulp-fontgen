@@ -27,11 +27,14 @@ export default options => {
   }
   // Creating a stream through which each file will pass
 
-  return through.obj((file, enc, callback) => {
-    // options.source = file.path;
-    fontface(options);
+  const thr = through.obj((file, enc, callback) => {
+    const opts = options;
+    opts.source = file.path;
+    fontface(opts);
 
-    this.push(file);
+    thr.push(file);
     return callback();
   });
+
+  return thr;
 };
