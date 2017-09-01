@@ -16,7 +16,7 @@ Then, add it to your `gulpfile.js`:
 
 ```javascript
 var gulp = require('gulp');
-var fontgen = require('../gulp-fontgen');
+var fontgen = require('gulp-fontgen');
 
 gulp.task('fontgen', function() {
   return gulp.src("./src/*.{ttf,otf}")
